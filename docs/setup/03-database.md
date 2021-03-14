@@ -65,24 +65,24 @@ Create a new user:
 Install Redis:
 
 ```bash
-  sudo apt install redis-server
+sudo apt install redis-server
 ```
 
 Edit the config file:
 
 ```bash
-  sudo nano /etc/redis/redis.conf
+sudo nano /etc/redis/redis.conf
 ```
 
 ```plaintext
-  supervised systemd
-  bind 127.0.0.1 ::1
+supervised systemd
+bind 127.0.0.1 ::1
 ```
 
 Restart Redis:
 
 ```bash
-  sudo systemctl restart redis
+sudo systemctl restart redis
 ```
 
 

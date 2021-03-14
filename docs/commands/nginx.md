@@ -3,5 +3,5 @@
 Check the config for errors:
 
 ```bash
-  sudo nginx -t
+sudo nginx -t
 ```

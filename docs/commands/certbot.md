@@ -9,7 +9,7 @@ sudo certbot certificates
 Obtain the SSL certificate (after obtaining the certificate, adjust the Nginx config and reload Nginx):
 
 ```bash
-sudo certbot certonly --webroot -w /var/www/_letsencrypt -d <domain> -d www.<domain> --email <email> -n --agree-tos
+sudo certbot certonly --webroot -w /var/www/<domain> -d <domain> -d www.<domain> --email <email> -n --agree-tos
 ```
 
 Managing certificates:

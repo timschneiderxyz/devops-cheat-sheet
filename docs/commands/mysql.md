@@ -19,7 +19,7 @@ Create a new database:
 
 ```bash
 sudo mysql -u root -p
-CREATE DATABASE <username>;
+CREATE DATABASE <db_name>;
 GRANT ALL ON <db_name>.* TO <username>@'localhost' IDENTIFIED BY <user_password> WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 EXIT;

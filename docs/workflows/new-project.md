@@ -26,11 +26,13 @@ Check the config for errors and reload Nginx:
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
-Obtain the SSL certificate (after obtaining the certificate, adjust the Nginx config and reload Nginx):
+Obtain the SSL certificate:
 
 ```bash
-sudo certbot certonly --webroot -w /var/www/_letsencrypt -d <domain> -d www.<domain> --email <email> -n --agree-tos
+sudo certbot certonly --webroot -w /var/www/<domain> -d <domain> -d www.<domain> --email <email> -n --agree-tos
 ```
+
+After obtaining the certificate, adjust the Nginx config for SSL and reload Nginx.
 
 ---
 

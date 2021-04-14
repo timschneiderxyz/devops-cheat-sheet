@@ -2,7 +2,7 @@
 
 Fed up with having to remember all the different commands you need every now and then to manage your server? Finally being able to say: "Look, mum, I can do DevOps too"?
 
-Because I felt the same way, I am now trying to summarise the most important commands and configurations that I need here in this repository.
+Because I felt the same way, I try to summarise the most important commands and configurations in this repository and expand them over time.
 
 Since I mainly use Debian as the operating system for my servers, the system-dependent commands, such as those concerning systemd or the package manager, are related to it. Most other commands, however, should be identical or at least very similar on all other Linux distributions.
 
@@ -39,6 +39,10 @@ Collection of frequently used commands for various programmes.
 - [Nginx](./docs/commands/nginx.md)
 - [Certbot](./docs/commands/certbot.md)
 
+#### Development
+
+- [Git](./docs/commands/git.md)
+
 #### Databases
 
 - [PostgreSQL](./docs/commands/postgresql.md)
@@ -47,10 +51,12 @@ Collection of frequently used commands for various programmes.
 
 #### PHP
 
+- [PHP](./docs/commands/php.md)
 - [Composer](./docs/commands/composer.md)
 
 #### NodeJS
 
+- [npm](./docs/commands/npm.md)
 - [nvm](./docs/commands/nvm.md)
 - [PM2](./docs/commands/pm2.md)
 
@@ -60,4 +66,6 @@ Collection of frequently used commands for various programmes.
 
 ## Examples
 
-Example configuration files. Coming soon.
+Example configuration files for:
+
+- Nginx

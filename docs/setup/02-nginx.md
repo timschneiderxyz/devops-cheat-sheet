@@ -3,7 +3,7 @@
 Add the Nginx mainline repository:
 
 ```bash
-echo "deb https://nginx.org/packages/mainline/debian `lsb_release -cs` nginx" \ | sudo tee /etc/apt/sources.list.d/nginx.list
+echo "deb http://nginx.org/packages/mainline/debian `lsb_release -cs` nginx" \ | sudo tee /etc/apt/sources.list.d/nginx.list
 ```
 
 Import the signing key:
@@ -34,11 +34,23 @@ sudo mkdir /etc/nginx/sites-enabled
 sudo mkdir /var/www
 ```
 
-Disable the default config, edit the main config (check out the Nginx example config in this repository):
+Generate a Diffie-Hellman key:
 
 ```bash
-sudo mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.disabled
+sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
+```
+
+Remove the default-site config, edit the Nginx main config and add the necessary config for your site/app:
+
+> Create the config for your project in sites-available and activate it with a symlink in sites-enabled.
+> See [workflows/new-project](../workflows/new-project.md) for more information on this.
+> You can also check out [examples/nginx](../../examples/nginx/) for some Nginx example configs.
+
+```bash
+sudo rm /etc/nginx/conf.d/default.conf
 sudo nano /etc/nginx/nginx.conf
+sudo nano /etc/nginx/sites-available/<domain>.conf
+sudo ln -s /etc/nginx/sites-available/<domain>.conf /etc/nginx/sites-enabled
 ```
 
 Check the config for errors and start Nginx:
@@ -53,8 +65,6 @@ Install Certbot and create a common ACME-challenge directory:
 
 ```bash
 sudo apt install certbot
-sudo mkdir /var/www/_letsencrypt
-sudo chown www-data:www-data /var/www/_letsencrypt
 ```
 
 

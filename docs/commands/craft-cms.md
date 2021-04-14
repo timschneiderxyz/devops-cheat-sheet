@@ -3,7 +3,7 @@
 Download Craft:
 
 ```bash
-composer create-project craftcms/craft /var/www/<project_dir>
+composer create-project craftcms/craft /var/www/<domain>>
 ```
 
 Clean up the Craft CMS database:

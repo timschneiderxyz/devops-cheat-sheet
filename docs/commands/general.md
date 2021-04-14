@@ -43,6 +43,12 @@ List all installed packages:
 sudo apt list --installed
 ```
 
+List all non-Debian packages:
+
+```bash
+aptitude search '?narrow(?installed, ?not(?origin(Debian)))'
+```
+
 Managing packages:
 
 ```bash

@@ -116,7 +116,7 @@ sudo fail2ban-client reload
 ## Additional Packages
 
 ```bash
-sudo apt install git unzip
+sudo apt install curl unzip git
 ```
 
 

@@ -2,25 +2,25 @@
 
 Update server:
 
-```bash
+```sh
 sudo -- sh -c 'apt update && apt upgrade -y && apt autoremove -y && apt autoclean -y'
 ```
 
 Reboot server:
 
-```bash
+```sh
 sudo systemctl reboot
 ```
 
 Shutdown server:
 
-```bash
+```sh
 sudo systemctl poweroff
 ```
 
 ## User
 
-```bash
+```sh
 cat /etc/passwd # List all users.
 id <username> # Shows details about this user.
 group <username> # Show in which groups the user is.
@@ -28,7 +28,7 @@ group <username> # Show in which groups the user is.
 
 Managing users:
 
-```bash
+```sh
 sudo adduser <username> # Create a new user.
 sudo deluser --remove-home <username> # Delete a user and remove his home directory.
 sudo usermod -aG <group> <username> # Add user to a group.
@@ -39,19 +39,19 @@ sudo deluser <username> <group> # Remove a user from a group.
 
 List all installed packages:
 
-```bash
+```sh
 sudo apt list --installed
 ```
 
 List all non-Debian packages:
 
-```bash
+```sh
 aptitude search '?narrow(?installed, ?not(?origin(Debian)))'
 ```
 
 Managing packages:
 
-```bash
+```sh
 sudo apt update # Package lists are re-read and updated.
 sudo apt upgrade # Update installed packages to a newer version if possible.
 sudo apt autoremove # Uninstall unused dependencies.
@@ -65,13 +65,13 @@ sudo apt purge <package> # Remove the package and its config files.
 
 Show the status of a service:
 
-```bash
+```sh
 sudo systemctl status <service>
 ```
 
 Managing services:
 
-```bash
+```sh
 sudo systemctl start <service>
 sudo systemctl reload <service> # Keep the service running and reload the config files.
 sudo systemctl restart <service> # Stop the service and restart it.
@@ -84,31 +84,31 @@ sudo systemctl disable <service> # Disable the service to start up at boot.
 
 Upload directories/files:
 
-```bash
+```sh
 scp -P <ssh_port> -r [dir|file] <server_ip>:~/
 ```
 
 Find directories/files:
 
-```bash
+```sh
 sudo find / -name [dir|file]
 ```
 
 Change user and group of directory/file:
 
-```bash
+```sh
 sudo chown -R <username>:<group> [dir|file]
 ```
 
 Change permissions of directory/file:
 
-```bash
+```sh
 sudo chmod -R 775 [dir|file]
 ```
 
 Create a Symlink:
 
-```bash
+```sh
 sudo ln -s <absolut_path_source> <absolut_path_destination>
 ```
 
@@ -116,13 +116,13 @@ sudo ln -s <absolut_path_source> <absolut_path_destination>
 
 Get server IP address:
 
-```bash
+```sh
 ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
 ```
 
 Create swap file:
 
-```bash
+```sh
 sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
 sudo /sbin/mkswap /var/swap.1
 sudo /sbin/swapon /var/swap.1
@@ -130,12 +130,12 @@ sudo /sbin/swapon /var/swap.1
 
 Set timezone:
 
-```bash
+```sh
 sudo dpkg-reconfigure tzdata
 ```
 
 If the command is not found:
 
-```bash
+```sh
 export PATH=$PATH:/usr/sbin
 ```

@@ -2,26 +2,26 @@
 
 Add the PHP repository:
 
-```bash
+```sh
 echo "deb https://packages.sury.org/php `lsb_release -cs` main" \ | sudo tee /etc/apt/sources.list.d/php.list
 ```
 
 Import the signing key:
 
-```bash
+```sh
 curl -sS https://packages.sury.org/php/apt.gpg | sudo apt-key add -
 ```
 
 Install PHP and all necessary packages:
 
-```bash
+```sh
 sudo apt update
 sudo apt install php8.0-fpm php8.0-pgsql php8.0-mysql php8.0-zip php8.0-curl php8.0-mbstring php8.0-xml php8.0-intl php8.0-gd php8.0-imagick
 ```
 
 Edit the config files (adjust the file path according to the installed version):
 
-```bash
+```sh
 sudo nano /etc/php/8.0/fpm/pool.d/www.conf
 ```
 
@@ -32,7 +32,7 @@ listen.owner = www-data
 listen.group = www-data
 ```
 
-```bash
+```sh
 sudo nano /etc/php/8.0/fpm/php.ini
 ```
 
@@ -43,7 +43,7 @@ max_execution_time = 300
 upload_max_filesize = 100M
 ```
 
-```bash
+```sh
 sudo nano /etc/php/8.0/cli/php.ini
 ```
 
@@ -54,13 +54,13 @@ max_execution_time = 0
 
 Restart PHP:
 
-```bash
+```sh
 sudo systemctl restart php8.0-fpm.service
 ```
 
 ## Composer
 
-```bash
+```sh
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin/ --filename=composer
 ```
 

@@ -2,6 +2,6 @@
 
 Restart PHP-FPM (adjust to the installed version):
 
-```bash
+```sh
 sudo /etc/init.d/php8.0-fpm restart
 ```

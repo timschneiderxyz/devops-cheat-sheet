@@ -2,19 +2,19 @@
 
 List the status of all application managed by PM2:
 
-```bash
+```sh
 pm2 [list|ls|status]
 ```
 
 Start an app:
 
-```bash
+```sh
 pm2 start <file> --name <name>
 ```
 
 Managing processes:
 
-```bash
+```sh
 pm2 restart [name|id|all]
 pm2 reload [name|id|all]
 pm2 stop [name|id|all]
@@ -23,14 +23,14 @@ pm2 delete [name|id|all]
 
 Setup startup script:
 
-```bash
+```sh
 pm2 startup -u <username> --hp /home/<userhome>
 pm2 save
 ```
 
 Update:
 
-```bash
+```sh
 npm install -g pm2@latest
 pm2 update
 ```

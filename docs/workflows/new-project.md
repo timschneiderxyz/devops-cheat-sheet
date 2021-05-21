@@ -2,7 +2,7 @@
 
 Create the project directory and set the permissions:
 
-```bash
+```sh
 sudo mkdir /var/www/<domain>
 sudo chown -R <username>:www-data /var/www/<domain>
 sudo chmod -R 775 /var/www/<domain>
@@ -10,25 +10,25 @@ sudo chmod -R 775 /var/www/<domain>
 
 Add the Ngnix config for the project:
 
-```bash
+```sh
 sudo nano /etc/nginx/sites-available/<domain>.conf
 ```
 
 Activate the config by linking it to the sites-enabled directory:
 
-```bash
+```sh
 sudo ln -s /etc/nginx/sites-available/<domain>.conf /etc/nginx/sites-enabled
 ```
 
 Check the config for errors and reload Nginx:
 
-```bash
+```sh
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
 Obtain the SSL certificate:
 
-```bash
+```sh
 sudo certbot certonly --webroot -w /var/www/<domain> -d <domain> -d www.<domain> --email <email> -n --agree-tos
 ```
 

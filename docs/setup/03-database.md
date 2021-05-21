@@ -4,26 +4,26 @@
 
 Add the PostgreSQL repository:
 
-```bash
+```sh
 echo "deb https://apt.postgresql.org/pub/repos/apt `lsb_release -cs`-pgdg main" \ | sudo tee /etc/apt/sources.list.d/postgresql.list
 ```
 
 Import the signing key:
 
-```bash
+```sh
 curl -sS https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 ```
 
 Install PostgreSQL:
 
-```bash
+```sh
 sudo apt update
 sudo apt install postgresql
 ```
 
 Create a new user:
 
-```bash
+```sh
 sudo -u postgres createuser -P -s -e <username>
 ```
 
@@ -31,13 +31,13 @@ sudo -u postgres createuser -P -s -e <username>
 
 Install MySQL:
 
-```bash
+```sh
 sudo apt install default-mysql-server
 ```
 
 Secure the installation:
 
-```bash
+```sh
 sudo mysql_secure_installation
 ```
 
@@ -54,7 +54,7 @@ Reload privilege tables now? [Y/n]: Y
 
 Create a new user:
 
-```bash
+```sh
 sudo mysql -u root -p
 CREATE USER 'username'@'localhost' IDENTIFIED BY 'user_password';
 EXIT;
@@ -64,13 +64,13 @@ EXIT;
 
 Install Redis:
 
-```bash
+```sh
 sudo apt install redis-server
 ```
 
 Edit the config file:
 
-```bash
+```sh
 sudo nano /etc/redis/redis.conf
 ```
 
@@ -81,7 +81,7 @@ bind 127.0.0.1 ::1
 
 Restart Redis:
 
-```bash
+```sh
 sudo systemctl restart redis
 ```
 

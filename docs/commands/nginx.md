@@ -2,12 +2,12 @@
 
 Check the config for errors:
 
-```bash
+```sh
 sudo nginx -t
 ```
 
 Check the config for errors and restart Nginx:
 
-```bash
+```sh
 sudo nginx -t && sudo systemctl restart nginx
 ```

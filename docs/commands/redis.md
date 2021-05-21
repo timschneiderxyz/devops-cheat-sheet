@@ -2,24 +2,24 @@
 
 Enter CLI:
 
-```bash
+```sh
 redis-cli
 ```
 
 Select a database:
 
-```bash
+```sh
 SELECT <db_index>
 ```
 
 Delete all the keys of the currently selected database:
 
-```bash
+```sh
 FLUSHDB
 ```
 
 Delete all the keys of all the existing databases:
 
-```bash
+```sh
 FLUSHALL
 ```

@@ -2,7 +2,7 @@
 
 Create a new user:
 
-```bash
+```sh
 sudo mysql -u root -p
 CREATE USER <username>@'localhost' IDENTIFIED BY <user_password>;
 EXIT;
@@ -10,14 +10,14 @@ EXIT;
 
 Show all databases:
 
-```bash
+```sh
 sudo mysql -u root -p
 SHOW DATABASES;
 ```
 
 Create a new database:
 
-```bash
+```sh
 sudo mysql -u root -p
 CREATE DATABASE <db_name>;
 GRANT ALL ON <db_name>.* TO <username>@'localhost' IDENTIFIED BY <user_password> WITH GRANT OPTION;
@@ -27,13 +27,13 @@ EXIT;
 
 Delete a database:
 
-```bash
+```sh
 sudo mysql -u root -p
 DROP DATABASE <db_name>;
 ```
 
 Import a database:
 
-```bash
+```sh
 mysql -u <username> -p <db_name> < <db_dump>
 ```

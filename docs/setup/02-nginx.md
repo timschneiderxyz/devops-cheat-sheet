@@ -2,33 +2,33 @@
 
 Add the Nginx mainline repository:
 
-```bash
+```sh
 echo "deb http://nginx.org/packages/mainline/debian `lsb_release -cs` nginx" \ | sudo tee /etc/apt/sources.list.d/nginx.list
 ```
 
 Import the signing key:
 
-```bash
+```sh
 curl -sS https://nginx.org/keys/nginx_signing.key | sudo apt-key add -
 ```
 
 Install Nginx:
 
-```bash
+```sh
 sudo apt update
 sudo apt install nginx
 ```
 
 Allow the necessary ports in the firewall:
 
-```bash
+```sh
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 ```
 
 Create the necessary directories:
 
-```bash
+```sh
 sudo mkdir /etc/nginx/sites-available
 sudo mkdir /etc/nginx/sites-enabled
 sudo mkdir /var/www
@@ -36,7 +36,7 @@ sudo mkdir /var/www
 
 Generate a Diffie-Hellman key:
 
-```bash
+```sh
 sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 ```
 
@@ -46,7 +46,7 @@ Remove the default-site config, edit the Nginx main config and add the necessary
 > See [workflows/new-project](../workflows/new-project.md) for more information on this.
 > You can also check out [examples/nginx](../../examples/nginx/) for some Nginx example configs.
 
-```bash
+```sh
 sudo rm /etc/nginx/conf.d/default.conf
 sudo nano /etc/nginx/nginx.conf
 sudo nano /etc/nginx/sites-available/<domain>.conf
@@ -55,7 +55,7 @@ sudo ln -s /etc/nginx/sites-available/<domain>.conf /etc/nginx/sites-enabled
 
 Check the config for errors and start Nginx:
 
-```bash
+```sh
 sudo nginx -t && sudo systemctl start nginx
 ```
 
@@ -63,7 +63,7 @@ sudo nginx -t && sudo systemctl start nginx
 
 Install Certbot and create a common ACME-challenge directory:
 
-```bash
+```sh
 sudo apt install certbot
 ```
 

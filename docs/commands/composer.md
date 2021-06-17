@@ -23,5 +23,5 @@ composer dump-autoload -a
 Nuke:
 
 ```sh
-sudo rm -rf vendor/ && sudo rm composer.lock && composer clear-cache && composer update
+rm -rf vendor composer.lock && composer clear-cache && composer update
 ```

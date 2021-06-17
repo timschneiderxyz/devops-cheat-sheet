@@ -39,10 +39,6 @@ Collection of frequently used commands for various programmes.
 - [Nginx](./docs/commands/nginx.md)
 - [Certbot](./docs/commands/certbot.md)
 
-#### Development
-
-- [Git](./docs/commands/git.md)
-
 #### Databases
 
 - [PostgreSQL](./docs/commands/postgresql.md)
@@ -56,8 +52,8 @@ Collection of frequently used commands for various programmes.
 
 #### NodeJS
 
-- [npm](./docs/commands/npm.md)
 - [nvm](./docs/commands/nvm.md)
+- [npm](./docs/commands/npm.md)
 - [PM2](./docs/commands/pm2.md)
 
 #### Miscellaneous

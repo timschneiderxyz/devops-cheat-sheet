@@ -29,6 +29,7 @@ sudo ufw allow 443/tcp
 Create the necessary directories:
 
 ```sh
+sudo mkdir /etc/nginx/ssl
 sudo mkdir /etc/nginx/sites-available
 sudo mkdir /etc/nginx/sites-enabled
 sudo mkdir /var/www
@@ -40,11 +41,13 @@ Generate a Diffie-Hellman key:
 sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 ```
 
-Remove the default-site config, edit the Nginx main config and add the necessary config for your site/app:
+Generate a self signed certificate:
 
-> Create the config for your project in sites-available and activate it with a symlink in sites-enabled.
-> See [workflows/new-project](../workflows/new-project.md) for more information on this.
-> You can also check out [examples/nginx](../../examples/nginx/) for some Nginx example configs.
+```sh
+sudo openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
+```
+
+Remove the default configs and replace them with your own. Check out [workflows/new-project](../workflows/new-project.md) and [examples/nginx](../../examples/nginx/) for more details.
 
 ```sh
 sudo rm /etc/nginx/conf.d/default.conf
@@ -67,8 +70,6 @@ Install Certbot and create a common ACME-challenge directory:
 sudo apt install certbot
 ```
 
-
 ---
-
 
 [Next - Databases](03-database.md)

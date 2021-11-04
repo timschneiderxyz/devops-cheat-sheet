@@ -41,6 +41,7 @@ cgi.fix_pathinfo=0
 memory_limit = 256M
 max_execution_time = 300
 upload_max_filesize = 100M
+post_size_limit = 100M
 ```
 
 ```sh
@@ -64,8 +65,6 @@ sudo systemctl restart php8.0-fpm.service
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin/ --filename=composer
 ```
 
-
 ---
-
 
 [Next - NodeJS](05-nodejs.md)

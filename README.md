@@ -56,10 +56,6 @@ Collection of frequently used commands for various programmes.
 - [npm](./docs/commands/npm.md)
 - [PM2](./docs/commands/pm2.md)
 
-#### Miscellaneous
-
-- [Craft CMS](./docs/commands/craft-cms.md)
-
 ## Examples
 
 Example configuration files for:
